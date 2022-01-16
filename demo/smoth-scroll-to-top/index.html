@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<header class="mobile-menu">Text here</header>
+<a href="#" id="rezistro-scroll" style="display: none;"><span></span></a>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey Line 1</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey Line 2</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey Line 3</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<p>Floating Back to Top Button with Smooth Scroll using CSS & JQuey</p>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+
+<style>
+
+body {
+    margin: 0px;
+}
+
+header {
+  padding: 20px 40px;
+  background: gray;
+  width: 100%;
+  
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: position 10s;
+  -ms-transition: position 10s;
+  -o-transition: position 10s;
+  transition: all 0.5s ease;
+}
+section {
+  height: 150vh;
+}
+
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: smoothScroll 1s forwards;
+}
+@keyframes smoothScroll {
+	0% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+
+
+
+	#rezistro-scroll {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#3498db;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+#rezistro-scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+#rezistro-scroll:hover {
+    background-color:#e74c3c;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+$(window).scroll(function() {
+  var sticky = $('.mobile-menu'),
+    scroll = $(window).scrollTop();
+   
+  if (scroll >= 40) { 
+    sticky.addClass('fixed'); }
+  else { 
+   sticky.removeClass('fixed');
+
+}
+});
+
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#rezistro-scroll').fadeIn(); 
+        } else { 
+            $('#rezistro-scroll').fadeOut(); 
+        } 
+    }); 
+    $('#rezistro-scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+</script>
+</body>
+</html> 
