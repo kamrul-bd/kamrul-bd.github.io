@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Multi Select With Search jQuery plug-in</title>
+		
+		<link rel="stylesheet" href="css/multi-select.css" type="text/css" media="all" title="" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" title="" />
+
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.multi-select.js"></script>
+		<script type="text/javascript" src="js/jquery.quicksearch.js"></script>
+		<script type="text/javascript" src="js/multi-select-with-search.js"></script>
+	</head>
+	<body>
+	<select id='custom-headers' multiple='multiple'>
+		<option value='elem_1'>elem 1</option>
+		<option value='elem_2'>elem 2</option>
+		<option value='elem_3'>elem 3</option>
+		<option value='elem_4'>elem 4</option>
+		<option value='elem_100'>elem 100</option>
+	</select>
+
+	<script type="text/javascript">
+		$("select[multiple=multiple]").multiSelectWithSearch({
+			selectableSearchPlaceHolder: 'Type keyword for q1',
+			selectionSearchPlaceHolder: 'Type keyword for q2'
+		});
+	</script>
+	</body>
+</html>
