@@ -2,6 +2,8 @@ var today = new Date();
 var todayDate = String(today.getDate()).padStart(2, '0')+'-'+ String(today.getMonth() + 1).padStart(2, '0')+'-'+today.getFullYear();
 var formatedTodayDate = today.getFullYear()+'/'+ String(today.getMonth() + 1)+'/'+ String(today.getDate()).padStart(2, '0');
 
+
+
 function importToPdfView() {
     var checkPreviousData = $('#element-to-print').html();
 
@@ -62,7 +64,10 @@ function importToPdfView() {
     }  
 }  
 
-function BindRow(jsondata) {/*Function used to convert the JSON array*/  
+function BindRow(jsondata) {/*Function used to convert the JSON array*/
+    var companyName = $("#companyName").val();
+    var provideByName = $("#provideByName").val();
+    var provideByDesignation = $("#provideByDesignation").val();
     var columns = BindColumnHeader(jsondata); /*Gets all the column headings of Excel*/  
 
     for (var i = 0; i < jsondata.length; i++) {
@@ -83,7 +88,7 @@ function BindRow(jsondata) {/*Function used to convert the JSON array*/
                         </div>
                         <h3 class="text-center" style="margin-bottom:20px!important;">To Whom It May Concern</h3>
                         This is to certify that Mr ${jsondata[i]['Name']}, ${jsondata[i]['Designation']} of 
-                        ${jsondata[i]['Department']} Department is a permanent employee of Devnet Limited. 
+                        ${jsondata[i]['Department']} Department is a permanent employee of ${companyName}. 
                         He joined in the company on ${jsondata[i]['Joining Date']}. The company has paid total Tk  ${jsondata[i]['Total Amount']} (${numberToWords(jsondata[i]['Total Amount'])}) only against as salary and allowance during the financial year ${jsondata[i]['Financial Year']} and assessment year ${jsondata[i]['Assessment Year']}. Details are given below.
                         <br></br>
                     <div>
@@ -150,9 +155,9 @@ function BindRow(jsondata) {/*Function used to convert the JSON array*/
                             </tbody>
                         </table>
                     </div>
-                    <h5 style="margin-top:100px!important;">Parvin Akhter</h5>
-                    Deputy Manager (Accounts & Finance) <br>
-                    Devnet Limited
+                    <h5 style="margin-top:100px!important;">${provideByName}</h5>
+                    ${provideByDesignation} <br>
+                    ${companyName}
                 </div>`;
 
         $('#element-to-print').append(row);
