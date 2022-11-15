@@ -70,6 +70,21 @@ function BindRow(jsondata) {/*Function used to convert the JSON array*/
     var provideByDesignation = $("#provideByDesignation").val();
     var columns = BindColumnHeader(jsondata); /*Gets all the column headings of Excel*/  
 
+    switch (true) {
+        case companyName == '':
+            alert('Please enter company name.');
+            return false;
+            break;
+        case provideByName == '':
+            alert('Please enter provided by name.');
+            return false;
+            break;
+        case provideByDesignation == '':
+            alert('Please enter provided by designation.');
+            return false;
+            break;                
+    }
+
     for (var i = 0; i < jsondata.length; i++) {
         var challanDates = jsondata[i]['Challan Date'].split(',');
         var challanNos = jsondata[i]['Challan No.'].split(',');
