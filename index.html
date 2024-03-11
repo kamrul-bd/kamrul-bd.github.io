@@ -1,9 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
-</head>
-<body>
- Hellow world
-</body>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamrul Islam</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Sidebar */
+        a{
+        text-decoration: none;
+        }
+        #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        z-index: 1;
+        background-color: #343a40;
+        padding-top: 0px;
+        margin-left: 0px;
+        transition: margin-left 0.3s ease-in-out 0.5s;
+        }
+
+        #sidebar .sidebar-header {
+        padding: 20px;
+        text-align: center;
+        background-color: #212529;
+        }
+
+        #sidebar ul.components {
+        padding: 20px 0;
+        }
+
+        #sidebar ul.components li {
+        margin-bottom: 10px;
+        }
+
+        #sidebar ul.components li a {
+        padding: 10px 15px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        }
+
+        #sidebar ul.components li a:hover {
+        background-color: #5a6268;
+        }
+
+        #sidebar.active {
+        margin-left: -250px!important;
+        transition: margin-left 0.3s ease-in-out 0.5s;
+        }
+
+        /*#sidebar.active .sidebar-header h3 {
+        display: none;
+        }*/
+
+        #sidebar.active ul.components li a {
+        transition: width 0.3s ease-in-out 0.5s;
+        }
+
+        /* Page Content */
+        #content {
+        margin-left: 250px;
+        padding: 0px;
+        transition: margin-left 0.3s ease-in-out 0.5s;
+        }
+
+        #content.extend{
+        margin-left: 0px;
+        transition: margin-left 0.3s ease-in-out 0.5s;
+        }
+
+        /* Smooth Scroll */
+        html {
+        scroll-behavior: smooth;
+        }
+
+        .profile-image{
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-white">
+            <img class="profile-image mb-2" src="assets/images/kamrul.png">
+            <h3>Kamrul Islam</h3>
+            </div>
+            <ul class="list-unstyled components">
+            <li class="active">
+                <a href="javascript:void(0)" onclick="scrollToSection('about')">About Me</a>
+            </li>
+            
+            <li>
+                <a href="javascript:void(0)" onclick="scrollToSection('experiences')">Experiences</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="scrollToSection('projects')">Projects</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="scrollToSection('resume')">Download Resume</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact Me</a>
+            </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+            <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </nav>
+
+            <!-- About Section -->
+            <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">About Me</h2>
+                <p>Enthusiastic Software Engineer with 7+ years of experience in building and executing innovative software solutions
+                    to enhance business productivity. Having a responsible position where I would use my zeal, interpersonal skills,
+                    creativity and all my experiences in order to contribute to the advancement of the employing organization and
+                    develop my career.</p>
+            </div>
+            </section>
+
+            <!-- Experiences Timeline Section -->
+            <section id="experiences" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Experiences</h2>
+                <!-- Add your experiences timeline here -->
+                <div class="timeline">
+                <div class="timeline-item">
+                    <h4>FIGLAB</h4>
+                    <p>Position: Sr. Software Engineer (Level II)</p>
+                    <p>Duration: December 2022 - Present</p>
+                    <p> ❏ Requirement analysis, time estimation and system design. </br>
+                        ❏ Cooperate with team members to develop quality applications, fix issues and share knowledge.</br>
+                        ❏ Collaborate cross-functionally with UI/UX team, QA team, Project managers and other teams.</br>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Apple Inc. Via Softzino Technologies</h4>
+                    <p>Position: Independent Contractor</p>
+                    <p>Duration: December 2022 - December 2023</p>
+                    <p>
+                        ❏ Requirement analysis, time estimation and system design. </br>
+                        ❏ Develop API for Web Application and iOS. Write test case for both features and units. Write API
+                        documentation. </br>
+                        ❏ Develop Web Application using Nuxt js and Vue js. Write technical documentation and user documentation. </br>
+                        ❏ Cooperate with team members to develop quality applications, fix issues and share knowledge. </br>
+                        ❏ Collaborate cross-functionally with UI/UX team, QA team, Project managers and other teams. </br>
+                        ❏ Contributed to three applications, one of which is currently being used in all Apple Stores around the world. </br>
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Devnet Limited</h4>
+                    <p>Position: Sr. Software Engineer (Level II) | </p>
+                    <p>Duration: Nobember 2020 - November 2022</p>
+                    <p>
+                        ❏ Developed 2 Enterprise applications for very well known & renowned organizations (TIB & bKash). One of
+                        those is serving an online exam with live proctoring in Bangladesh. </br>
+                        ❏ Participate in requirement analysis, time estimation and system design sessions. </br>
+                        ❏ Collaborate cross-functionally with UI/UX team, Data science team, Project managers and other teams. </br>
+                        ❏ Joining technical meetings with the client on a regular basis. </br>
+                        ❏ Review code and mentor junior developers. </br>
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Innovadeus Pvt. Ltd</h4>
+                    <p>Position: Web Application Developer</p>
+                    <p>Duration: Nobember 2016 - October 2020</p>
+                    <p>
+                        ❏ Designing the application, Ensuring the back end services and developing the admin module.</br>
+                        ❏ Provide REST API for mobile and web application development. Improving operations by conducting systems
+                        analysis, recommending changes in policies and procedures.</br>
+                        ❏ Deploy the system in cloud server, maintain and optimize the system.</br>
+                        ❏ Collaborate with clients, iOS & android team, graphic artists, and sales & marketing professionals</br>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- Project Showcase Section -->
+            <section id="projects" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Projects</h2>
+                <!-- Add your project showcase here -->
+                <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+                </div>
+            </div>
+            </section>
+
+            <!-- Download Resume Section -->
+            <section id="resume" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Download Resume</h2>
+                <p>Add a link to download your resume here.</p>
+                <a class="btn btn-dark" href="assets/resume/Resume-Of-Kamrul-Islam.pdf" target="_blank" download> Download </a>
+            </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Contact Me</h2>
+                <p>Email: kamrul.bdit24@gmail.com</p>
+                <p>Phone: +880 1914073097</p>
+                <!-- Add a contact form here if needed -->
+            </div>
+            </section>
+
+        </div>
+
+        <!-- Bootstrap JS and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Sidebar Toggle Script -->
+        <script>
+            $(document).ready(function () {
+            $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+                $("#content").toggleClass("extend");
+            });
+            });
+
+            function scrollToSection(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        </script>
+    </body>
 </html>
